@@ -31,3 +31,6 @@ Online play. The dream.
 Players enter a matching room name
 Stop anyone else joining
 Show players names to each other (limit charcaters to avoid spam)
+
+### Tools
+Prettier `npm i -D prettier` to install as a dev dependency
