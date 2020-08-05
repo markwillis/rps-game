@@ -34,3 +34,30 @@ Show players names to each other (limit charcaters to avoid spam)
 
 ### Tools
 Prettier `npm i -D prettier` to install as a dev dependency
+In scripts, add this:
+```
+scripts: {
+  "format": "prettier \"src/**/*.{js, html}\" --write",
+}
+```
+Then run `npm install -D eslint eslint-config-prettier`
+Create new file called `.eslintrc.json`
+Add this: This uses the eslint recommended setup and is not opinionated, it allows me to write code freely and will catch some bugs, but not force writing code a specific way. 
+```
+{
+  "extends": ["eslint:recommended", "prettier", "prettier/react"],
+  "plugins": [],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node":true
+  }
+}
+```

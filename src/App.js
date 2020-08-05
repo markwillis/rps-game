@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { options } from "./options";
 
+const word = "new";
+
 const Header = () => {
   return (
     <nav className="navbar">
@@ -13,7 +15,7 @@ const Header = () => {
   );
 };
 
-const Icon = props => {
+const Icon = (props) => {
   return (
     <div className="icon-wrap">
       <h1 className="icon">{props.icon}</h1>
@@ -21,7 +23,7 @@ const Icon = props => {
   );
 };
 
-const Button = props => {
+const Button = (props) => {
   const { name, value, handleClick, disabled, type } = props;
   return (
     <button
@@ -36,15 +38,15 @@ const Button = props => {
   );
 };
 
-const ButtonWrapper = props => {
+const ButtonWrapper = (props) => {
   return <div className="button-wrapper">{props.children}</div>;
 };
 
-const ScoreWrapper = props => {
+const ScoreWrapper = (props) => {
   return <div className="score-card-grid">{props.children}</div>;
 };
 
-const ScoreCard = props => {
+const ScoreCard = (props) => {
   const { player, score } = props;
   return (
     <div className="score-card">
@@ -63,7 +65,7 @@ export default function App() {
   const [cpuScore, setCpuScore] = useState(0);
   const [draw, setDraw] = useState(0);
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     setIsDisabled(true);
     // sets an object for each choice so I can access various properties
     setPlayerOption(options[e.target.value]);
@@ -136,10 +138,9 @@ export default function App() {
       }
     }
     // found this on StackOverflow to stop eslint error https://stackoverflow.com/a/55854902/13496885
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDisabled]);
 
-  const buttons = options.map(item => {
+  const buttons = options.map((item) => {
     return (
       <Button
         name={item.icon}
