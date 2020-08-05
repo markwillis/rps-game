@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { options } from "./options";
+import { options } from "./options"; 
 
-const word = "new";
+ const word = "new";
 
 const Header = () => {
   return (
-    <nav className="navbar">
-      <h1 className="nav-header">rock. paper. scissors</h1>
-      <p>
-        Rock beats Scissors. Scissors beats paper. Paper beats Rock. That's all.
-      </p>
-    </nav>
+  <nav className="navbar">
+    <h1 className="nav-header">rock. paper. scissors</h1>
+    <p>
+      Rock beats Scissors. Scissors beats paper. Paper beats Rock. That's all.
+    </p>
+  </nav>
   );
 };
 
