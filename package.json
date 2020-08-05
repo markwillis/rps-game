@@ -1,7 +1,7 @@
 {
   "name": "rps-game",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "cra-template": "1.0.3",
     "react": "^16.13.1",
@@ -9,15 +9,10 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "format": "prettier \"src/**/*.{js, html}\" --write",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -33,11 +28,7 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {
-    "eslint": "^7.6.0",
-    "eslint-config-prettier": "^6.11.0",
-    "prettier": "^2.0.5"
-  },
+  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
