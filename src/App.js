@@ -1,19 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { options } from "./options"; 
-
- const word = "new";
-
-const Header = () => {
-  return (
-  <nav className="navbar">
-    <h1 className="nav-header">rock. paper. scissors</h1>
-    <p>
-      Rock beats Scissors. Scissors beats paper. Paper beats Rock. That's all.
-    </p>
-  </nav>
-  );
-};
+import Header from './components/header/Header'
+import Button, {ButtonWrapper} from './components/button/Button'
 
 const Icon = (props) => {
   return (
@@ -21,25 +10,6 @@ const Icon = (props) => {
       <h1 className="icon">{props.icon}</h1>
     </div>
   );
-};
-
-const Button = (props) => {
-  const { name, value, handleClick, disabled, type } = props;
-  return (
-    <button
-      className={`button ${type}`}
-      name={name}
-      value={value}
-      onClick={handleClick}
-      disabled={disabled}
-    >
-      {name}
-    </button>
-  );
-};
-
-const ButtonWrapper = (props) => {
-  return <div className="button-wrapper">{props.children}</div>;
 };
 
 const ScoreWrapper = (props) => {

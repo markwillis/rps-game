@@ -64,57 +64,7 @@ h1 {
   margin-right: auto;
 }
 
-.button.option {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border: none;
-  padding: 9px 15px;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  font-size: 30px;
-}
 
-.button:focus {
-  outline: none;
-}
-
-.button.option:hover:enabled {
-  background-color: rgb(32, 32, 32);
-}
-
-.button.option:disabled {
-  opacity: 50%;
-  outline: none;
-}
-
-.button.next {
-  background-color: rgb(0, 0, 0);
-  font-size: 16px;
-  padding: 9px 15px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-.button.next:disabled {
-  opacity: 50%;
-}
-
-.button.next:hover:enabled {
-  background-color: rgb(32, 32, 32);
-}
-
-.button.reset {
-  background-color: transparent;
-  border: none;
-  color: gray;
-}
-
-.button.reset:hover {
-  color: #333333;
-}
 
 .score-card-grid {
   font-family: system-ui;
