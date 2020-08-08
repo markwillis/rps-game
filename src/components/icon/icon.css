@@ -1,0 +1,34 @@
+.icon {
+  font-size: 80px;
+  line-height: 1rem;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  min-width: 200px;
+}
+
+.icon-wrapper {
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 20px;
+  min-height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 9px 5px hsla(0, 0%, 0%, 0.15);
+  margin-bottom: 20px;
+}
+
+.icon-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -3,14 +3,7 @@ import "./styles.css";
 import { options } from "./options"; 
 import Header from './components/header/Header'
 import Button, {ButtonWrapper} from './components/button/Button'
-
-const Icon = (props) => {
-  return (
-    <div className="icon-wrap">
-      <h1 className="icon">{props.icon}</h1>
-    </div>
-  );
-};
+import Icon from './components/icon/Icon'
 
 const ScoreWrapper = (props) => {
   return <div className="score-card-grid">{props.children}</div>;
@@ -29,7 +22,7 @@ const ScoreCard = (props) => {
 export default function App() {
   const [playerOption, setPlayerOption] = useState({});
   const [cpuOption, setCpuOption] = useState({});
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("Let us begin, warrior");
   const [isDisabled, setIsDisabled] = useState(false);
   const [playerScore, setPlayerScore] = useState(0);
   const [cpuScore, setCpuScore] = useState(0);
@@ -45,7 +38,7 @@ export default function App() {
   const nextRound = () => {
     setPlayerOption({});
     setCpuOption({});
-    setResult("");
+    setResult("Make another selection");
     setIsDisabled(false);
   };
 
@@ -60,7 +53,7 @@ export default function App() {
     if (reset) {
       setPlayerOption({});
       setCpuOption({});
-      setResult("");
+      setResult("Why you restart? 'Fried of losin? 🐓");
       setPlayerScore(0);
       setCpuScore(0);
       setDraw(0);
@@ -140,14 +133,16 @@ export default function App() {
         <br />
         <Button name="Reset" handleClick={handleReset} type="reset" />
       </div>
-      <h1>...{result}</h1>
+      <h1>{result}</h1>
       <div className="icon-wrapper">
-        <Icon player="You" icon={playerOption.icon} />
+        
         <ScoreWrapper>
+        <Icon player="You" icon={playerOption.icon} />
+      <Icon player="CPU" icon={cpuOption.icon} />
           <ScoreCard player="You" score={playerScore} />
           <ScoreCard player="CPU" score={cpuScore} />
         </ScoreWrapper>
-        <Icon player="CPU" icon={cpuOption.icon} />
+        
       </div>
       <h3>Number of draws: {draw === 0 ? "None yet" : draw}</h3>
     </div>
