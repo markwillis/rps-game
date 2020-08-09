@@ -4,6 +4,7 @@ import { options } from "./options";
 import Header from './components/header/Header'
 import Button, {ButtonWrapper} from './components/button/Button'
 import Icon from './components/icon/Icon'
+import Modal from "./Modal"
 
 const ScoreWrapper = (props) => {
   return <div className="score-card-grid">{props.children}</div>;
@@ -20,6 +21,8 @@ const ScoreCard = (props) => {
 };
 
 export default function App() {
+  const [isOpen, setIsOpen] = useState(true)
+  const [name, setName] = useState("")
   const [playerOption, setPlayerOption] = useState({});
   const [cpuOption, setCpuOption] = useState({});
   const [result, setResult] = useState("Let us begin, warrior");
@@ -27,6 +30,9 @@ export default function App() {
   const [playerScore, setPlayerScore] = useState(0);
   const [cpuScore, setCpuScore] = useState(0);
   const [draw, setDraw] = useState(0);
+
+  const winningMessage = `You win, ${name}! 🎉`
+  const losingMessage = `Lol. You're such a loser, ${name}! 🤣`
 
   const handleClick = (e) => {
     setIsDisabled(true);
@@ -61,6 +67,11 @@ export default function App() {
     }
   };
 
+  const handleName = e => {
+    e.preventDefault()
+    setName(e.target.value)
+  }
+
   useEffect(() => {
     if (!isDisabled) {
       return;
@@ -69,10 +80,10 @@ export default function App() {
         setResult("Tie");
         setDraw(draw + 1);
       } else if (playerOption.name === "Paper" && cpuOption.name === "Rock") {
-        setResult("You win!");
+        setResult(winningMessage);
         setPlayerScore(playerScore + 1);
       } else if (playerOption.name === "Rock" && cpuOption.name === "Paper") {
-        setResult("CPU Wins!");
+        setResult(losingMessage);
         setCpuScore(cpuScore + 1);
       } else if (
         playerOption.name === "Scissors" &&
@@ -90,7 +101,7 @@ export default function App() {
         playerOption.name === "Rock" &&
         cpuOption.name === "Scissors"
       ) {
-        setResult("You win!");
+        setResult(`You win ${name}`);
         setPlayerScore(playerScore + 1);
       } else if (
         playerOption.name === "Scissors" &&
@@ -117,9 +128,28 @@ export default function App() {
     );
   });
 
+  const BUTTON_STYLE = {
+    zIndex: 1,
+    padding: '20px',
+    backgroundColor: "gray",
+  }
+
   return (
     <div className="App">
+      <div style={BUTTON_STYLE}>
+        <button onClick={() => setIsOpen(true)}>Open modal</button>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+          <form onSumbit={handleName}>
+            <label>
+              Name
+              <input onChange={handleName} value={name}/>
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+        </Modal>
+      </div>
       <Header />
+      {name ? `Hello ${name}` : `Hey there...`}
       <ButtonWrapper>{buttons}</ButtonWrapper>
       <Button
         name="Next round!"
@@ -138,11 +168,10 @@ export default function App() {
         
         <ScoreWrapper>
         <Icon player="You" icon={playerOption.icon} />
-      <Icon player="CPU" icon={cpuOption.icon} />
+        <Icon player="CPU" icon={cpuOption.icon} />
           <ScoreCard player="You" score={playerScore} />
           <ScoreCard player="CPU" score={cpuScore} />
         </ScoreWrapper>
-        
       </div>
       <h3>Number of draws: {draw === 0 ? "None yet" : draw}</h3>
     </div>

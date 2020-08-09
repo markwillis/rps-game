@@ -49,3 +49,8 @@
 .button.reset:hover {
   color: #333333;
 }
+
+.button.modal {
+  background-color: "blue";
+  color: white;
+}
