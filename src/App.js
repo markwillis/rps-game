@@ -33,7 +33,7 @@ export default function App() {
   const [cpuScore, setCpuScore] = useState(0);
   const [draw, setDraw] = useState(0);
 
-  const winningMessage = `You win, ${name}! 🎉`
+  const winningMessage = `${name} wins!`
   const losingMessage = `Computer wins. Try again, ${name}`
 
   const handleClick = (e) => {
@@ -148,7 +148,6 @@ export default function App() {
       <div style={BUTTON_STYLE}>
         <button onClick={() => setIsOpen(true)}>Update details</button>
         <Modal open={isOpen}>
-          <h1 style={{color: 'white'}}>What is your name?</h1>
           <Form handleUpdatedForm={handleUpdatedForm}/>
         </Modal>
       </div>

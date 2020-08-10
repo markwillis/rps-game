@@ -9,7 +9,7 @@ const Modal = ({open, children, handleClose}) => {
   return ReactDOM.createPortal(
     <>
       <div className="overlay" />
-      <div className="modal">
+      <div className="modal-wrapper">
         {children}
       </div>
     </>,

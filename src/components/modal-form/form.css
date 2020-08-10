@@ -1,0 +1,41 @@
+.modal-form {
+  display: flex;
+  padding-top: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+  flex-direction: column;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-image: var(--app-color);
+  color: white;
+}
+
+label {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+input {
+  height: 30px;
+  align-self: stretch;
+  margin-bottom: 21px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+}
+
+.submit {
+  height: 50px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: hsla(135, 93.94%, 39.88%, 0.81);
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+  font-size: 20px;
+}

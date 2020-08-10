@@ -1,4 +1,5 @@
 import React from 'react'
+import './form.css'
 
 const Form = ({name, games, handleUpdatedForm}) => {
   
@@ -9,15 +10,15 @@ const Form = ({name, games, handleUpdatedForm}) => {
   }
 
   return (
+    <>
+    
     <form className="modal-form" onSubmit={handleSubmit}>
-      <label name="Name">Enter your name!
-        <input type="text" name="name" required/>
-      </label>
-      <label name="Name">Number of games?
-        <input type="number" name="games" min="1" />
-      </label>
-      <input type="submit" value="Submit"/>
+    <h1>Enter your name</h1>
+      <input type="text" name="name" required/>
+      <input type="number" name="games" min="1" />
+      <input className="submit" type="submit" value="Submit"/>
     </form>
+    </>
   )
 }
 

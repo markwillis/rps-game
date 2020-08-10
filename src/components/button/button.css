@@ -1,12 +1,12 @@
 .button.option {
-  background-color: rgb(0, 0, 0);
+  background-image: var(--app-color);
   color: white;
   border: none;
   padding: 9px 15px;
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .button:focus {
@@ -14,7 +14,7 @@
 }
 
 .button.option:hover:enabled {
-  background-color: rgb(32, 32, 32);
+  background-image: var(--icon-hover);
 }
 
 .button.option:disabled {
@@ -23,7 +23,7 @@
 }
 
 .button.next {
-  background-color: rgb(0, 0, 0);
+  background-image: var(--app-color);
   font-size: 16px;
   padding: 9px 15px;
   color: white;
@@ -37,7 +37,7 @@
 }
 
 .button.next:hover:enabled {
-  background-color: rgb(32, 32, 32);
+  background-image: var(--icon-hover)
 }
 
 .button.reset {

@@ -4,8 +4,9 @@ body {
   display: relative;
 }
 
-h1 {
-  color: rgb(0, 0, 0);
+:root {
+  --app-color: linear-gradient(225deg, hsla(320, 100.00%, 46.00%, 1.00), hsla(22, 100.00%, 44.67%, 1.00));
+  --icon-hover: linear-gradient(225deg, rgb(177, 0, 118), rgb(177, 65, 0));
 }
 
 .App {
@@ -86,26 +87,3 @@ h1 {
   background-color: gray;
 }
 
-/* Modal form styles */
-.modal-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-label {
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
-
-input {
-  margin-left: 10px;
-  border: none;
-  outline: none;
-  padding: 8px 12px
-}
-
-input:required {
-  border: 1px solid;
-  border-color: red;
-}
