@@ -4,7 +4,7 @@ import { options } from "./options";
 import Header from './components/header/Header'
 import Button, {ButtonWrapper} from './components/button/Button'
 import Icon from './components/icon/Icon'
-import Modal from "./Modal"
+import Modal from "./modal/Modal"
 import Form from './components/modal-form/Form'
 
 const ScoreWrapper = (props) => {
@@ -146,7 +146,7 @@ export default function App() {
   return (
     <div className="App">
       <div style={BUTTON_STYLE}>
-        <button onClick={() => setIsOpen(true)}>Open modal</button>
+        <button onClick={() => setIsOpen(true)}>Update details</button>
         <Modal open={isOpen}>
           <h1 style={{color: 'white'}}>What is your name?</h1>
           <Form handleUpdatedForm={handleUpdatedForm}/>

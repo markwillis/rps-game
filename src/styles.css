@@ -104,3 +104,8 @@ input {
   outline: none;
   padding: 8px 12px
 }
+
+input:required {
+  border: 1px solid;
+  border-color: red;
+}

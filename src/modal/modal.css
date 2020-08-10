@@ -1,0 +1,22 @@
+.modal {
+  position: fixed;
+  min-width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
+  padding: 50px;
+  z-index: 1000;
+  color: white;
+  border-radius: 10px;
+  background-image: linear-gradient(135deg, hsla(277, 100.00%, 40.00%, 1.00), hsla(20, 100.00%, 36.33%, 1.00));
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .9);
+}
