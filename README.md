@@ -18,9 +18,9 @@ Will display funny CPU comments such as: "Ha! I win, you lose" or "You can't bea
 (can add to an array and pick one at random)
 Add visual UI to show where the point went to e.g highlight scorecard, or show a +1 icon
 GIF comments from CPU depending on the rounds result (API connect perhaps?)
-Add player name
-Choose how many games to play up to.
-Could figure out when it's the penultimate round and chnage the UI
+Add player name ✅ - WIP
+Choose how many games to play up to. ✅ - WIP
+Could figure out when it's the penultimate round and change the UI
 Add tooltips on hove to show the option name (practice creating tooltips)
 Ability to choose emoji skin-tone for player and CPU
 Ability to change color scheme

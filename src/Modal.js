@@ -4,6 +4,7 @@ import Button from '../src/components/button/Button'
 
 const MODAL_STYLES = {
   position: 'fixed',
+  minWidth: '700px',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -11,7 +12,7 @@ const MODAL_STYLES = {
   padding: '50px',
   zIndex: 1000,
   color: "white",
-  borderRadius: "20px",
+  borderRadius: "10px",
 }
 
 const OVERLAY_STYLES = {
@@ -23,7 +24,7 @@ const OVERLAY_STYLES = {
   backgroundColor: 'rgba(0, 0, 0, .9)'
 }
 
-const Modal = ({open, children, onClose}) => {
+const Modal = ({open, children, handleClose}) => {
   if(!open) return null
 
   return ReactDom.createPortal(
@@ -31,9 +32,6 @@ const Modal = ({open, children, onClose}) => {
       <div style={OVERLAY_STYLES} />
       <div style={MODAL_STYLES}>
         {children}
-        <div>
-          <button onClick={onClose}>Click me</button>
-        </div>
       </div>
     </>,
     document.getElementById('portal'))
