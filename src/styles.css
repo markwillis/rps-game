@@ -7,6 +7,8 @@ body {
 :root {
   --app-color: linear-gradient(225deg, hsla(320, 100.00%, 46.00%, 1.00), hsla(22, 100.00%, 44.67%, 1.00));
   --icon-hover: linear-gradient(225deg, rgb(177, 0, 118), rgb(177, 65, 0));
+  --submit: rgb(3, 146, 3);
+  --submit-hover: rgb(1, 136, 1);
 }
 
 .App {

@@ -24,7 +24,6 @@ const ScoreCard = (props) => {
 export default function App() {
   const [isOpen, setIsOpen] = useState(true)
   const [name, setName] = useState("")
-  const [games, setGames] = useState(0)
   const [playerOption, setPlayerOption] = useState({});
   const [cpuOption, setCpuOption] = useState({});
   const [result, setResult] = useState("Let us begin, warrior");
@@ -66,6 +65,7 @@ export default function App() {
       setCpuScore(0);
       setDraw(0);
       setIsDisabled(false);
+      setIsOpen(true);
     }
   };
 
@@ -136,23 +136,18 @@ export default function App() {
     backgroundColor: "gray",
   }
 
-  const handleUpdatedForm = (name, games) => {
+  const handleUpdatedForm = (name) => {
     setName(name)
-    setGames(games)
     setIsOpen(false)
   }
 
 
   return (
     <div className="App">
-      <div style={BUTTON_STYLE}>
-        <button onClick={() => setIsOpen(true)}>Update details</button>
         <Modal open={isOpen}>
           <Form handleUpdatedForm={handleUpdatedForm}/>
         </Modal>
-      </div>
       <Header />
-      <h2>{name ? `Hello ${name}` : `Hey there...`}</h2>
       <ButtonWrapper>{buttons}</ButtonWrapper>
       <Button
         name="Next round!"

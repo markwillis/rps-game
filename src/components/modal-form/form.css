@@ -11,6 +11,7 @@
   border-bottom-right-radius: 8px;
   background-image: var(--app-color);
   color: white;
+  align-items: center;
 }
 
 label {
@@ -27,6 +28,7 @@ input {
   border: none;
   background-color: rgba(255, 255, 255, 0.7);
   font-size: 20px;
+  text-align: center;
 }
 
 .submit {
@@ -35,7 +37,11 @@ input {
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: hsla(135, 93.94%, 39.88%, 0.81);
+  background-color: var(--submit);
   color: hsla(0, 0.00%, 100.00%, 1.00);
   font-size: 20px;
+}
+
+.submit:hover {
+  background-color: var(--submit-hover);
 }

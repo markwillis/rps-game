@@ -4,19 +4,18 @@ import './form.css'
 const Form = ({name, games, handleUpdatedForm}) => {
   
   const handleSubmit = e => {
-    const {name, games} = e.currentTarget
+    const {name} = e.currentTarget
     e.preventDefault()
-    handleUpdatedForm(name.value, games.value)
+    handleUpdatedForm(name.value.toUpperCase())
   }
 
   return (
     <>
     
     <form className="modal-form" onSubmit={handleSubmit}>
-    <h1>Enter your name</h1>
-      <input type="text" name="name" required/>
-      <input type="number" name="games" min="1" />
-      <input className="submit" type="submit" value="Submit"/>
+    <h1>rock. paper. scissors.</h1>
+      <input type="text" name="name" placeholder="Enter your name" autoComplete="off" required/>
+      <input className="submit" type="submit" value="Start game"/>
     </form>
     </>
   )
