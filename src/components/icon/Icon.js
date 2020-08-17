@@ -1,5 +1,5 @@
-import React from 'react'
-import './icon.css'
+import React from "react";
+import "./icon.css";
 
 const Icon = (props) => {
   return (
@@ -9,4 +9,4 @@ const Icon = (props) => {
   );
 };
 
-export default Icon
+export default Icon;

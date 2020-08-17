@@ -1,5 +1,5 @@
-import React from 'react'
-import './button.css'
+import React from "react";
+import "./button.css";
 
 export const ButtonWrapper = (props) => {
   return <div className="button-wrapper">{props.children}</div>;
@@ -20,4 +20,4 @@ const Button = (props) => {
   );
 };
 
-export default Button
+export default Button;

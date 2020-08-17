@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { options } from "./options"; 
-import Header from './components/header/Header'
-import Button, {ButtonWrapper} from './components/button/Button'
-import Icon from './components/icon/Icon'
-import Modal from "./modal/Modal"
-import Form from './components/modal-form/Form'
+import { options } from "./options";
+import Header from "./components/header/Header";
+import Button, { ButtonWrapper } from "./components/button/Button";
+import Icon from "./components/icon/Icon";
+import Modal from "./modal/Modal";
+import Form from "./components/modal-form/Form";
 
 const ScoreWrapper = (props) => {
   return <div className="score-card-grid">{props.children}</div>;
@@ -22,8 +22,8 @@ const ScoreCard = (props) => {
 };
 
 export default function App() {
-  const [isOpen, setIsOpen] = useState(true)
-  const [name, setName] = useState("")
+  const [isOpen, setIsOpen] = useState(true);
+  const [name, setName] = useState("");
   const [playerOption, setPlayerOption] = useState({});
   const [cpuOption, setCpuOption] = useState({});
   const [result, setResult] = useState("Let us begin, warrior");
@@ -32,8 +32,8 @@ export default function App() {
   const [cpuScore, setCpuScore] = useState(0);
   const [draw, setDraw] = useState(0);
 
-  const winningMessage = `${name} wins!`
-  const losingMessage = `Computer wins. Try again, ${name}`
+  const winningMessage = `${name} wins!`;
+  const losingMessage = `Computer wins. Try again, ${name}`;
 
   const handleClick = (e) => {
     setIsDisabled(true);
@@ -69,10 +69,10 @@ export default function App() {
     }
   };
 
-  const handleName = e => {
-    e.preventDefault()
-    setName(e.target.value)
-  }
+  const handleName = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
+  };
 
   useEffect(() => {
     if (!isDisabled) {
@@ -132,21 +132,20 @@ export default function App() {
 
   const BUTTON_STYLE = {
     zIndex: 1,
-    padding: '20px',
+    padding: "20px",
     backgroundColor: "gray",
-  }
+  };
 
   const handleUpdatedForm = (name) => {
-    setName(name)
-    setIsOpen(false)
-  }
-
+    setName(name);
+    setIsOpen(false);
+  };
 
   return (
     <div className="App">
-        <Modal open={isOpen}>
-          <Form handleUpdatedForm={handleUpdatedForm}/>
-        </Modal>
+      <Modal open={isOpen}>
+        <Form handleUpdatedForm={handleUpdatedForm} />
+      </Modal>
       <Header />
       <ButtonWrapper>{buttons}</ButtonWrapper>
       <Button
@@ -163,10 +162,9 @@ export default function App() {
       </div>
       <h1>{result}</h1>
       <div className="icon-wrapper">
-        
         <ScoreWrapper>
-        <Icon player="You" icon={playerOption.icon} />
-        <Icon player="CPU" icon={cpuOption.icon} />
+          <Icon player="You" icon={playerOption.icon} />
+          <Icon player="CPU" icon={cpuOption.icon} />
           <ScoreCard player="You" score={playerScore} />
           <ScoreCard player="CPU" score={cpuScore} />
         </ScoreWrapper>
