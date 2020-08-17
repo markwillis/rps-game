@@ -119,6 +119,7 @@ export default function App() {
   const buttons = options.map((item) => {
     return (
       <Button
+        key={item.id}
         name={item.icon}
         value={item.id}
         handleClick={handleClick}
@@ -129,12 +130,6 @@ export default function App() {
       </Button>
     );
   });
-
-  const BUTTON_STYLE = {
-    zIndex: 1,
-    padding: "20px",
-    backgroundColor: "gray",
-  };
 
   const handleUpdatedForm = (name) => {
     setName(name);
