@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./styles.css";
 import { options } from "./options";
 import Header from "./components/header/Header";
@@ -7,18 +8,26 @@ import Icon from "./components/icon/Icon";
 import Modal from "./modal/Modal";
 import Form from "./components/modal-form/Form";
 
-const ScoreWrapper = (props) => {
-  return <div className="score-card-grid">{props.children}</div>;
+const ScoreWrapper = ({ children }) => {
+  return <div className="score-card-grid">{children}</div>;
 };
 
-const ScoreCard = (props) => {
-  const { player, score } = props;
+ScoreWrapper.propTypes = {
+  children: PropTypes.isRequired,
+};
+
+const ScoreCard = ({ player, score }) => {
   return (
     <div className="score-card">
       <h3>{player}</h3>
       <h1 className="score">{score}</h1>
     </div>
   );
+};
+
+ScoreCard.propTypes = {
+  player: PropTypes.string,
+  score: PropTypes.number,
 };
 
 export default function App() {
@@ -69,11 +78,6 @@ export default function App() {
     }
   };
 
-  const handleName = (e) => {
-    e.preventDefault();
-    setName(e.target.value);
-  };
-
   useEffect(() => {
     if (!isDisabled) {
       return;
@@ -113,7 +117,6 @@ export default function App() {
         setCpuScore(cpuScore + 1);
       }
     }
-    // found this on StackOverflow to stop eslint error https://stackoverflow.com/a/55854902/13496885
   }, [isDisabled]);
 
   const buttons = options.map((item) => {
